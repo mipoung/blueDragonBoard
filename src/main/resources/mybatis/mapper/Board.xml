@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blueDragonBoard.dao.BoardDao">
+
+    <select id="boardList" resultType="board">
+        SELECT * from board
+    </select>
+    <!-- 다른 SQL 문들도 추가할 수 있음 -->
+    
+    <insert id="boardInsert">
+    	INSERT INTO board (b_name, b_title, b_content, b_date, b_pwd, readcnt, r_cnt)
+    	VALUES(#{bName}, #{bTitle}, #{bContent}, NOW(), #{bPwd}, 10, 3);
+    </insert>
+</mapper>
+
